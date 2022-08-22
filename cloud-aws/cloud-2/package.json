@@ -1,0 +1,40 @@
+{
+  "name": "rest-1",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {
+    "eslint": "^7.32.0",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^5.2.0",
+    "husky": "^7.0.4",
+    "lint-staged": "^12.1.2",
+    "nodemon": "^2.0.15",
+    "prettier": "^2.5.1"
+  },
+  "scripts": {
+    "start": "nodemon app.js",
+    "prepare": "husky install",
+    "format": "prettier --write . && eslint --fix .",
+    "lint": "prettier --check . && eslint ."
+  },
+  "type": "commonjs",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "lint-staged": {
+    "*.js": [
+      "npm run format",
+      "npm run lint"
+    ],
+    "*.{js,css,md}": "prettier --write"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.1071.0",
+    "dotenv": "^16.0.0",
+    "pino": "^7.6.5",
+    "pino-pretty": "^7.5.1"
+  }
+}
